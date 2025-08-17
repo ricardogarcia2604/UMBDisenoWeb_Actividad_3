@@ -1,0 +1,538 @@
+:root {
+    --general-radius: 20px;
+    --background: white;
+    --card-color: #EEF7FF;
+    --selection-color: #4D869C;
+    --Aux-color: #7AB2B2;
+    --strong-color: #176B87;
+    --gradient-color: linear-gradient(to right bottom, #176b87, #1b6c88, #1e6d89, #216f8a, #24708b, #2c768f, #347c92, #3c8296, #4b8e9d, #5a9aa4, #6aa6ab, #7ab2b2);
+    --gradient-color1: linear-gradient(to right bottom, #176b87, #28728c, #367891, #427f97, #4d869c);
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+html {
+    font-size: 62.5%;
+
+}
+body{
+    width: 100vw;
+}
+
+.Container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: minmax(150px, 15%) 1fr 1fr 1fr;
+    grid-template-rows: 10% 1fr 1fr 5%;
+    grid-template-areas:
+        "aside header header header"
+        "aside main main main"
+        "aside main main main"
+        "aside footer footer footer";
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background);
+    gap: 15px;
+}
+
+/*header CSS*/
+header {
+    grid-area: header;
+    border-radius: var(--general-radius);
+    background-color: var(--card-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "search search buttons buttons ";
+}
+
+.search-container {
+    grid-area: search;
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin: 2rem;
+    border-radius: var(--general-radius);
+    overflow: hidden;
+    background-color: white;
+}
+
+.search-input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    font-size: 1.6rem;
+    outline: none;
+}
+
+.search-button {
+    padding: 1rem 1.5rem;
+    border: none;
+    background-image: var(--gradient-color);
+    border-radius: var(--general-radius);
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-image: none;
+    background-color: var(--strong-color);
+}
+
+.header-buttons {
+    grid-area: buttons;
+    margin: auto 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-button--item {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-button--item:hover {
+    background-image: var(--gradient-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+
+/*Aside CSS*/
+aside {
+    padding-left: 10px;
+    grid-area: aside;
+    background-color: #222;
+    border-radius: var(--general-radius);
+    background-color: var(--card-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    object-fit: contain;
+    height: auto;
+
+}
+
+.aside-bottom {
+    margin-top: auto;
+}
+
+.Logo {
+    height: 100px;
+    overflow: hidden;
+    background-image: url(../assets/Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.Menu h6 {
+    margin: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--Aux-color);
+
+}
+
+.button {
+    display: inline-block;
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    color: var(--selection-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+.button:hover {
+    background-image: var(--gradient-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+
+.Menu ul {
+    font-size: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+/*Main CSS*/
+
+main {
+    grid-area: main;
+    border-radius: var(--general-radius);
+    background-color: var(--card-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "welcome welcome button1 button2"
+        "card1 card2 card3 card4"
+        "card1 card2 card5 table1"
+        "table2 table2 card6 table1"
+        "table2 table2 card6 table1";
+    padding: 10px;
+    gap: 8px;
+}
+
+main img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.welcome {
+    grid-area: welcome;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--selection-color)
+}
+
+.welcome h1 {
+    font-size: 5rem;
+}
+
+.welcome p {
+    font-size: 1.6rem;
+}
+
+.button1 {
+    grid-area: button1;
+}
+
+.button2 {
+    grid-area: button2;
+}
+
+.main-button {
+    width: 80%;
+    height: 60px;
+    border-radius: var(--general-radius);
+    border: 1px solid white;
+    background-color: white;
+    color: var(--selection-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    align-self: center;
+}
+
+.main-button:hover {
+    background-image: var(--gradient-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.main-cards {
+    border-radius: var(--general-radius);
+    padding: 3rem 1rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    line-height: 3rem;
+    justify-content: space-between;
+}
+
+.main-cards--title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--selection-color);
+    justify-self: flex-start;
+
+}
+
+.main-cards--content {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--selection-color);
+    justify-self: center;
+
+}
+
+.main-cards--info {
+    background-image: var(--gradient-color);
+    border-radius: var(--general-radius);
+    padding: 0 1rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+    justify-self: flex-end;
+}
+
+.main-cards--info:hover {
+    background: var(--strong-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+/*carrds*/
+.card1 {
+    grid-area: card1;
+    order: 1;
+}
+
+.card2 {
+    grid-area: card2;
+    order: 2;
+
+}
+
+.card3 {
+    grid-area: card3;
+    order: 3;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    place-content: center;
+    box-sizing: border-box;
+
+}
+
+.card4 {
+    grid-area: card4;
+    order: 4;
+
+}
+
+.card5 {
+    grid-area: card5;
+    order: 5;
+
+}
+
+.card6 {
+    grid-area: card6;
+    order: 6;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+
+}
+
+
+/*Tables CSS*/
+.table2-Container,
+.table1-Container {
+    grid-area: table2;
+    order: 8;
+    max-height: 100%;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: var(--general-radius);
+}
+
+.table1-Container {
+    grid-area: table1;
+    order: 7;
+    max-height: 100%;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: var(--general-radius);
+}
+
+.table2,
+.table1 {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 1.3rem;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table2 th,
+.table2 td,
+.table1 th,
+.table1 td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.table2 th,
+.table1 th {
+    background-color: var(--selection-color);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    text-align: center;
+}
+
+.table2 thead,
+.table1 thead {
+    background-color: #f4f4f4;
+}
+
+.table2 tr:hover,
+.table1 tr:hover {
+    background-color: #f9f9f9;
+}
+
+.active {
+    color: green;
+    font-weight: bold;
+}
+
+.inactive {
+    color: red;
+    font-weight: bold;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: var(--general-radius);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.overdue {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/*Footer CSS*/
+footer {
+    grid-area: footer;
+    border-radius: var(--general-radius);
+    background-color: var(--card-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.logout-btn {
+    background: white;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #dc3545;
+    color: white;
+}
+
+/*Menu */
+.menu-toggle {
+    display: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.close-menu {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 1rem;
+    color: var(--selection-color);
+}
+
+@media (max-width: 768px) {
+
+    .close-menu {
+        display: block;
+    }
+    .Container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+        margin: 0 auto;
+        width: 100vw;
+        box-sizing: border-box;
+        
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .header-buttons {
+        flex-direction: row;
+        margin: 1rem;
+    }
+    aside {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 25rem;
+        height: 100%;
+        background-color: var(--card-color);
+        border-radius: 0;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
+    .main-cards {
+        height: auto;
+        line-height: 5rem;
+        
+    }
+    aside.active {
+        left: 0;
+    }
+
+}
